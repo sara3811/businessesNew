@@ -1,0 +1,16 @@
+<!--mat-accordion *ngIf="userService.flag" class="spacer">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <span >שלום {{userService.userName}}</span>
+      </mat-expansion-panel-header>
+      <button mat-button (click)="userService.logout()">התנתק</button>
+    </mat-expansion-panel>
+    
+  </mat-accordion-->
+<button *ngIf="userService.flag" class="spacer" mat-button [matMenuTriggerFor]="menu">
+    <span>שלום {{userService.userName}}</span>
+</button>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="userService.logout()">התנתק</button>
+
+</mat-menu>

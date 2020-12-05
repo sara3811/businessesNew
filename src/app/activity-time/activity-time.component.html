@@ -1,0 +1,22 @@
+<mat-form-field>
+    <mat-label> מספר עובדים במשמרת</mat-label>
+    <input matInput type="number" formControlName="secondCtrl" placeholder="" required>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>ימי פעילות:</mat-label>
+    <mat-select [formControl]="days" multiple>
+        <mat-select-trigger>
+            {{days.value ? days.value[0] : ''}}
+            <span *ngIf="days.value?.length > 1" class="example-additional-selection">
+                (+{{days.value.length - 1}} {{days.value?.length === 2 ? 'other' : 'others'}})
+            </span>
+        </mat-select-trigger>
+        <mat-option *ngFor="let day of daysList" [value]="day">{{day}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+    <mat-label>שעת התחלה</mat-label>
+    <input matInput type="time">
+</mat-form-field>

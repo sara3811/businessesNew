@@ -1,0 +1,125 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+      local('MaterialIcons-Regular'),
+      url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+      url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+      url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+  }
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: rtl;
+    text-rendering: optimizeLegibility;
+  }  
+body{
+    direction: rtl;
+}
+
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bar-chart:before {
+  content: "\e921";
+}
+.icon-print:before {
+  content: "\e920";
+}
+.icon-refresh:before {
+  content: "\e91f";
+}
+.icon-arrowSwitch:before {
+  content: "\e91b";
+}
+.icon-battery:before {
+  content: "\e91c";
+}
+.icon-clock:before {
+  content: "\e91e";
+}
+.icon-plus-marker:before {
+  content: "\e91a";
+}
+.icon-bulk:before {
+  content: "\e919";
+}
+.icon-temperatur:before {
+  content: "\e91d";
+}
+.icon-downArrow:before {
+  content: "\e917";
+}
+.icon-upArrow:before {
+  content: "\e918";
+}
+.icon-rightArrow:before {
+  content: "\e916";
+}
+.icon-building:before {
+  content: "\e915";
+}
+.icon-truck-fill:before {
+  content: "\e914";
+}
+.icon-dashboard:before {
+  content: "\e913";
+}
+.icon-cancel:before {
+  content: "\e900";
+}
+.icon-edit:before {
+  content: "\e901";
+}
+.icon-excel:before {
+  content: "\e902";
+}
+.icon-filter:before {
+  content: "\e903";
+}
+.icon-leftArrow:before {
+  content: "\e904";
+}
+.icon-logOut:before {
+  content: "\e905";
+}
+.icon-marker:before {
+  content: "\e906";
+}
+.icon-plus:before {
+  content: "\e907";
+}
+.icon-process:before {
+  content: "\e908";
+}
+.icon-profil:before {
+  content: "\e909";
+}
+.icon-route:before {
+  content: "\e90a";
+}
