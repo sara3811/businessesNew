@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 @font-face {
     font-family: 'Material Icons';
     font-style: normal;
@@ -25,14 +26,20 @@
     direction: rtl;
     text-rendering: optimizeLegibility;
   }  
-body{
+
+  body{
     direction: rtl;
+      background-color: #48b5be;
+      margin:0;
+      border-bottom: 25px solid #fec80f;
+      height: 100vh;
+      font-family: 'Heebo' !important;
 }
 
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  //font-family: 'icomoon' ;
   speak: none;
   font-style: normal;
   font-weight: normal;

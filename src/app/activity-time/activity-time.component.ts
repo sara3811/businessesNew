@@ -9,7 +9,8 @@ import { FormControl } from '@angular/forms';
 export class ActivityTimeComponent implements OnInit {
   days = new FormControl();
   daysList: string[] = ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי'];
-  
+  startTime:Date;
+  endTime;
   constructor() { }
 
   ngOnInit(): void {

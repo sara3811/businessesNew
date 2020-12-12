@@ -29,17 +29,16 @@ export class CashierLoginComponent implements OnInit {
 
   public CheckPassword(password: string) {
 
-    this.http.get(environment.apiUrl + this.apiUri+"/"+password).subscribe((business => {
+    this.http.get(environment.apiUrl + this.apiUri + "/" + password).subscribe((business => {
       this.business = business;
       console.log(this.business);
       this.userService.kind=2;
 
     }),
-    (error=>{Swal.fire('Oops...', 'password is wrong!', 'error')}))
+      (error => { Swal.fire('Oops...', 'password is wrong!', 'error') }))
   }
   next()
   {
-    
     this.router.navigate(['/cashier-desk', this.selectedService.ServiceId]);
   }
   //#region 
@@ -50,12 +49,10 @@ export class CashierLoginComponent implements OnInit {
       const filterValue = value.toLowerCase();
       return this.businesses.filter(option => option.BusinessName.toLowerCase().indexOf(filterValue) === 0);
     }
-
     this.selectedBusiness = value;
     this.myControl.setValue(value.BusinessName);
     const filterValue = value.BusinessName.toLowerCase();
     return this.businesses.filter(option => option.BusinessName.toLowerCase().indexOf(filterValue) === 0);
-
   }
 
   loadBusinesses() {
@@ -68,10 +65,5 @@ export class CashierLoginComponent implements OnInit {
       );
     });
 
-  }
-
   }*/
-
-  //#endregion
-
 }

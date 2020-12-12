@@ -60,7 +60,7 @@ Swal.fire({
   text: "הקדמת תור הינה רק בהתאם לנהלי העסק והרשאות המנהל!",
   icon: 'warning',
   showCancelButton: true,
-  confirmButtonColor: 'rgb(245 165 54)',
+  confirmButtonColor: '#fec80f',
   cancelButtonColor: 'rgb(162 171 172)',
   confirmButtonText: 'כן ,אני יודע מה אני עושה!'
 }).then((result) => {

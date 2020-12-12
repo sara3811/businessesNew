@@ -1,63 +1,62 @@
-<mat-horizontal-stepper linear #stepper>
+<mat-horizontal-stepper  #stepper>
   <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
-
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel> פרטי עסק</ng-template>
       <mat-form-field>
         <mat-label>שם העסק</mat-label>
-        <input matInput formControlName="firstCtrl" placeholder="" required>
+        <input matInput formControlName="businessName" placeholder="שם עסק" required>
       </mat-form-field>
       <mat-form-field>
-        <mat-label>כתובת העסק</mat-label>
-        <input matInput placeholder="רחוב" required>
+        <mat-label>כתובת העסק:רחוב</mat-label>
+        <input matInput formControlName="adress_street" placeholder="רחוב" required>
       </mat-form-field>
       <mat-form-field>
-        <mat-label>כתובת העסק</mat-label>
-        <input type="number" matInput placeholder="מספר" required>
+        <mat-label>כתובת העסק:מספר</mat-label>
+        <input type="number" formControlName="adress_num" matInput placeholder="מספר" required>
       </mat-form-field>
       <mat-form-field>
-        <mat-label>כתובת העסק</mat-label>
-        <input matInput placeholder="עיר" required>
+        <mat-label>כתובת העסק:עיר</mat-label>
+        <input matInput formControlName="adress_city" placeholder="עיר" required>
       </mat-form-field>
       <div>
         <mat-form-field appearance="fill">
           <mat-label>בחר סיסמה לעסק</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <input matInput [type]="hide1 ? 'password' : 'text'" formControlName="password">
+          <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide1">
+            <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
           <mat-label>אמת סיסמה</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <input matInput [type]="hide2 ? 'password' : 'text'" formControlName="confirmPassword">
+          <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide2">
+            <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field appearance="fill">
           <mat-label>בחר סיסמת מנהל</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <input matInput [type]="hide3 ? 'password' : 'text'" formControlName="adminPassword">
+          <button mat-icon-button matSuffix (click)="hide3 = !hide3" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide3">
+            <mat-icon>{{hide3 ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>אמת סיסמת מנהל</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <input matInput [type]="hide4 ? 'password' : 'text'" formControlName="confirmAdminPassword">
+          <button mat-icon-button matSuffix (click)="hide4 = !hide4" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide4">
+            <mat-icon>{{hide4 ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
         </mat-form-field>
       </div>
       <div>
-        <button mat-button matStepperNext>הבא</button>
+        <button mat-button matStepperNext (click)="confirmFirstStep()">הבא</button>
       </div>
     </form>
   </mat-step>
@@ -70,21 +69,20 @@
       <app-service></app-service>
       <div>
         <button mat-button matStepperPrevious>הקודם</button>
-        <button mat-button matStepperNext>הבא</button>
+        <button mat-button matStepperNext (click)="confirmSecondStep()">הבא</button>
       </div>
     </form>
   </mat-step>
 
 
-  <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
-    <form [formGroup]="secondFormGroup">
+  <mat-step [stepControl]="thirdFormGroup" [editable]="isEditable">
+    <form [formGroup]="thirdFormGroup">
       <ng-template matStepLabel>זמני פעילות העסק </ng-template>
-      <app-activity-time>
-        <button mat-button (click)="addActivityTime()">add</button>
-      </app-activity-time>
+      <app-activity-time>      </app-activity-time>
+      <button mat-button (click)="addActivityTime()">add</button>
       <div>
         <button mat-button matStepperPrevious>הקודם</button>
-        <button mat-button matStepperNext>הבא</button>
+        <button mat-button (click)="confirmThirdStep()" matStepperNext>הבא</button>
       </div>
     </form>
   </mat-step>
@@ -95,7 +93,7 @@
     <div>
       <button mat-button matStepperPrevious>חזרה</button>
       <button mat-button (click)="stepper.reset()">נקה הכל</button>
-      <button mat-button>סיום הרשמה</button>
+      <button mat-button (click)="saveBusiness()">סיום הרשמה</button>
     </div>
   </mat-step>
 

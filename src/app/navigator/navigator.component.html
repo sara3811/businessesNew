@@ -1,0 +1,121 @@
+<div class="d-flex h-100">
+    <div class="side-menu d-flex">
+      <div class=" ">
+        <div id="garbage" class="nav-btn d-flex flex-column align-items-center my-auto justify-content-center"
+          
+           >
+          <div class="d-flex flex-column my-auto">
+            <i class="icon-tin"></i>
+            <div style="display:inline" >"garbage"</div>
+          </div>
+        </div>
+        <div id="garbage" class="nav-btn d-flex flex-column align-items-center my-auto justify-content-center"
+          [routerLink]="'dashboard'" [routerLinkActive]="['active']">
+          <i class="icon-dashboard"></i>
+          <div style="display:inline" >"dashboard"</div>
+        </div>
+  
+        <div id="truck" class="nav-btn d-flex flex-column align-items-center my-auto justify-content-center"
+          [routerLink]="'truck'" [routerLinkActive]="['active']">
+          <i class="icon-truck"></i>
+          <div style="display:inline" >"ggg"</div>
+        </div>
+  
+        <!--
+          <div id="truck" class="nav-btn d-flex flex-column align-items-center my-auto justify-content-center" [routerLink]="'region'"
+              [routerLinkActive]="['active']">
+  
+              <i class="icon-filter"></i>
+  
+              <span>נפות</span>
+  
+          </div>
+        -->
+        <!--
+          <div id="truck" class="nav-btn d-flex flex-column align-items-center my-auto justify-content-center" [routerLink]="'neighborhood'"
+  
+              [routerLinkActive]="['active']">
+  
+              <i class="icon-building"></i>
+  
+              <span>שכונות</span>
+  
+          </div>
+        -->
+  
+        <div id="dashboard" class="nav-btn d-flex flex-column align-items-center my-auto justify-content-center"
+         [routerLink]="'route'">
+          <!-- [routerLinkActive]="['active']" -->
+          <i class="icon-route"></i>
+          <div style="display:inline" ></div>
+        </div>
+        <!--
+          <div id="dashboard" class="nav-btn d-flex flex-column align-items-center my-auto justify-content-center"  [routerLink]="'stationsOfRoute/:iRouteId'" [routerLinkActive]="['active']">
+  
+                 <i class="icon-route"></i>
+  
+                <span> מסלולים</span>
+  
+             </div>
+        -->
+        <div id="map1" class="nav-btn d-flex flex-column align-items-center my-auto justify-content-center"
+          [routerLink]="'map'" [routerLinkActive]="['active']">
+          <i class="icon-marker"></i>
+          <div style="display:inline" >"map"</div>
+        </div>
+       
+  
+        <!--
+          <div id="history" class="nav-btn d-flex flex-column align-items-center my-auto justify-content-center" [routerLink]="'user'"
+              [routerLinkActive]="['active']">
+  
+              <i class="icon-users"></i>
+  
+              <span>משתמשים</span>
+  
+          </div>
+        -->
+        <!--
+          <div id="garbage" class="nav-btn d-flex flex-column align-items-center my-auto justify-content-center" [routerLink]="'scenario'"
+              [routerLinkActive]="['active']">
+  
+              <i class="icon-process"></i>
+  
+              <span> תסריטים</span>
+  
+          </div>
+        -->
+        
+        <!--
+          <div id="history" class="row" class="nav-btn" [routerLinkActive]="['active']"><br>ארכיון </div>
+        -->
+        <!--
+          <div id="settings" class="row" class="nav-btn" [routerLink]="'settings'" [routerLinkActive]="['active']"><br>הגדרות</div>
+        -->
+      </div>
+    </div>
+    <div class="main-wrap d-flex flex-column flex-grow-1">
+      <div class="top-header">
+        <img src="assets/logo.png" />
+  
+        <div class="float-left">
+          <span class="hello">
+  
+            <!-- <div style="background: red" >hi {{ "HELLO" | translate }}</div> -->
+            <span class="icon-profil ml-2"></span>
+            <div style="display:inline" ></div>
+            sara kook
+          </span>
+          &nbsp;|&nbsp;
+         
+        </div>
+      </div>
+  
+      <div class="main-content">
+        <div class="bg-map-img">
+          <img src="assets/bg-map.png" />
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>

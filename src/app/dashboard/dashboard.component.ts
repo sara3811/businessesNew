@@ -17,29 +17,29 @@ export class DashboardComponent implements OnInit {
   servicesInformation;
   businessId = 1;
   services = ['אופטיקה', 'אופטרימטיסט'];
-  optionsDailySalesChart: any = {
-    lineSmooth: Chartist.Interpolation.cardinal({
-      tension: 0
-    }),
-    low: 0,
-    high: 10, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-    chartPadding: { top: 0, right: 0, bottom: 0, left: 0 },
-  }
-//שליפת עסק ושליפת שירותים בעסק
+  optionsDailySalesChart: any =
+    {
+      lineSmooth: Chartist.Interpolation.cardinal({
+        tension: 0
+      }),
+      low: 0,
+      high: 12, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+      chartPadding: { top: 0, right: 0, bottom: 0, left: 0 },
+    }
+  //שליפת עסק ושליפת שירותים בעסק
   constructor(private statisticService: StatisticsService) {
 
     this.statisticService.getGeneralInformation().subscribe((information => {
-      console.log('information',information);
+      console.log('information', information);
       this.numOfTurns = information[0] + 1000;
       this.numOfBusinesses = information[1] + 20;
       this.numOfCategories = information[2] + 15;
-      this.numOfCustomers = information[3] + 80;
+      this.numOfCustomers = information[3] + 170;
     }))
-this.statisticService.getServicesInformation(this.businessId).subscribe((services=>
-  {
-    this.servicesInformation=services;
-    console.log(this.servicesInformation);
-  }))
+    this.statisticService.getServicesInformation(this.businessId).subscribe((services => {
+      this.servicesInformation = services;
+      console.log(this.servicesInformation);
+    }))
   }
 
   ngOnInit() {
@@ -47,9 +47,9 @@ this.statisticService.getServicesInformation(this.businessId).subscribe((service
     /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
     this.statisticService.getAvgWaitingPerDay(this.businessId).subscribe((servicesWithAvg => {
       this.avgWaitingPerDay = servicesWithAvg;
-      console.log('avgWaitingPerDay',this.avgWaitingPerDay);
-      
-    
+      console.log('avgWaitingPerDay', this.avgWaitingPerDay);
+
+
       for (let i = 0; i < 2; i++) {
 
         const dataDailySalesChart: any = {
@@ -60,12 +60,12 @@ this.statisticService.getServicesInformation(this.businessId).subscribe((service
         this.avgWaitingPerDay[i].forEach(a => arr.push(a));
         dataDailySalesChart.series.push(arr);
         var chartName = '#dailySalesChart' + i;
-        
-        var dailySalesChart = new Chartist.Line(chartName, dataDailySalesChart, this.optionsDailySalesChart);
-       
 
-       this.startAnimationForLineChart(dailySalesChart);
-      
+        var dailySalesChart = new Chartist.Line(chartName, dataDailySalesChart, this.optionsDailySalesChart);
+
+
+        this.startAnimationForLineChart(dailySalesChart);
+
       }
 
     }))
@@ -75,7 +75,7 @@ this.statisticService.getServicesInformation(this.businessId).subscribe((service
 
     /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
 
-  }
+  };
 
   startAnimationForLineChart(chart) {
     let seq: any, delays: any, durations: any;

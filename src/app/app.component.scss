@@ -1,3 +1,18 @@
 spacer{
     display: flex;;
 }
+
+.toolbar{
+    background-color: #067ca5;
+    border-bottom: 11px solid white;
+}
+
+mat-icon{
+    border-radius: 60px;
+    background-color: #046384;
+    color: white;
+    width: 34px;
+    height: 34px;
+    padding: 5px;
+}
+

@@ -13,7 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
  
-  {path:'' , component : HomeComponent, canActivate:[AuthGuard]},
+  {path:'' , component : DashboardComponent, canActivate:[AuthGuard]},
   {path:'enterance',component:EnteranceComponent},
   {path:'managerLogin',component:LoginComponent},
   {path:'cashierLogin',component:CashierLoginComponent},

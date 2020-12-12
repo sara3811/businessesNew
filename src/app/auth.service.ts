@@ -21,13 +21,15 @@ export class AuthService {
         let user = { 'userName': name, 'password': password };
         this.kind = 1;
         //פונקציה שבודקת בשרת האם הסיסמה של המנהל
-        this.userName = name;
+
         this
             .httpClient
             .post<any>(`${environment.apiUrl}/credentials`, user)
             .subscribe((user: any) => {
-                localStorage.setItem(this.key, JSON.stringify(user));
-                this.router.navigate(['/dashboard']);
+                localStorage.setItem('name', name);
+                // localStorage.setItem(this.key, JSON.stringify(user));
+                localStorage.setItem('kind', '1');
+                this.router.navigate(['/']);
 
             },
                 (error: any) => console.log('err', error))
@@ -35,17 +37,19 @@ export class AuthService {
     }
 
     logout() {
-        localStorage.removeItem(this.key);
+        localStorage.removeItem('kind');
         this.userName = '';
         this.flag = false;
-        this.router.navigate(['/managerLogin']);
-        
+        this.router.navigate(['enterance']);
+
     }
 
     //signup(){}
-
+    getUserName() {
+        return localStorage.getItem('name');
+    }
     getCurrentUser() {
 
-        return localStorage.getItem(this.key);
+        return localStorage.getItem('kind');
     }
 }
