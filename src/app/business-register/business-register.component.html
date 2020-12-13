@@ -68,7 +68,6 @@
       <!--ngFor-->
       <app-service></app-service>
       <div>
-        <button mat-button matStepperPrevious>הקודם</button>
         <button mat-button matStepperNext (click)="confirmSecondStep()">הבא</button>
       </div>
     </form>
@@ -81,7 +80,6 @@
       <app-activity-time>      </app-activity-time>
       <button mat-button (click)="addActivityTime()">add</button>
       <div>
-        <button mat-button matStepperPrevious>הקודם</button>
         <button mat-button (click)="confirmThirdStep()" matStepperNext>הבא</button>
       </div>
     </form>
@@ -91,8 +89,6 @@
     <ng-template matStepLabel>סיום</ng-template>
     <p>נרשמת בהצלחה.</p>
     <div>
-      <button mat-button matStepperPrevious>חזרה</button>
-      <button mat-button (click)="stepper.reset()">נקה הכל</button>
       <button mat-button (click)="saveBusiness()">סיום הרשמה</button>
     </div>
   </mat-step>

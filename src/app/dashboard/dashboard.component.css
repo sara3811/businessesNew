@@ -4,3 +4,8 @@
 .hebrew tr{
     text-align: center;
 }
+
+.table{
+    width: 75%;
+    margin-right: 10px;
+}
